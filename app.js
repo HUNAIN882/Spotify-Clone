@@ -56,3 +56,25 @@ audioElement.addEventListener('timeupdate', ()=> {
 myprogressbar.addEventListener('change',()=> {
   audioElement.currentTime = myprogressbar.value * audioElement.duration/100;
 })
+
+
+const makeAllPlays = ()=>{
+  Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+      element.classList.remove('fa-pause-circle');
+      element.classList.add('fa-play-circle');
+  })
+}
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+  element.addEventListener('click', (e)=>{ 
+      makeAllPlays();
+      e.target.classList.remove('fa-play-circle');
+     e.target.classList.add('fa-pause-circle');
+     audioElement.src = `songs/${songIndex+1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        gif.style.opacity = 1;
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+  })
+})
