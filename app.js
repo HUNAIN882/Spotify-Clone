@@ -9,10 +9,13 @@ let gif = document.getElementById('gif');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-  {songName: "Yarri Hai", filePath: "Songs/Yarri.mp3", coverPath: "Assets/download (10).jpeg" },
+  {songName: "System Pe System", filePath: "Songs/7.mp3", coverPath: "Assets/15.jpeg" },
   {songName: "Coca Cola Tu", filePath: "Songs/Coca.mp3", coverPath: "Assets/WhatsApp Image 2024-11-19 at 5.23.14 AM.jpeg" },
   {songName: "Excussess", filePath: "Songs/4.mp3", coverPath: "Assets/download (3).jpeg" },
-  {songName: "Hunain", filePath: "Songs/2 (2).mp3", coverPath: "Assets/download.jpeg2.jpeg" },
+  {songName: "Tenu Lehenga", filePath: "Songs/9.mp3", coverPath: "Assets/download.jpeg2.jpeg" },
+  {songName: "Tauba Tauba", filePath: "Songs/8.mp3", coverPath: "Assets/download.jpeg25.jpeg" },
+  {songName: "Amplifier", filePath: "Songs/1.mp3", coverPath: "Assets/download (1).jpeg" },
+  {songName: "Yarri Hai", filePath: "Songs/11.mp3", coverPath: "Assets/download (10).jpeg" },
 ]
 
 songItem.forEach((element, i)=> { 
