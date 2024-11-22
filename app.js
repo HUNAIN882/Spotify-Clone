@@ -6,20 +6,21 @@ let audioElement = new Audio('Songs/0.mp3');
 let masterPlay = document.getElementById("masterPlay");
 let myprogressbar = document.getElementById('myprogressbar');
 let gif = document.getElementById('gif');
+let masterSongName = document.getElementById('masterSongName');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
   {songName: "System Pe System", filePath: "Songs/0.mp3", coverPath: "Assets/15.jpeg" },
   {songName: "Coca Cola Tu", filePath: "Songs/2.mp3", coverPath: "Assets/WhatsApp Image 2024-11-19 at 5.23.14 AM.jpeg" },
   {songName: "Excussess", filePath: "Songs/3.mp3", coverPath: "Assets/download (3).jpeg" },
-  {songName: "Tenu Lehenga", filePath: "Songs/9.mp3", coverPath: "Assets/download.jpeg2.jpeg" },
-  {songName: "Tauba Tauba", filePath: "Songs/8.mp3", coverPath: "Assets/download.jpeg25.jpeg" },
+  {songName: "Tenu Lehenga", filePath: "Songs/4.mp3", coverPath: "Assets/download.jpeg2.jpeg" },
+  {songName: "Tauba Tauba", filePath: "Songs/7.mp3", coverPath: "Assets/download.jpeg25.jpeg" },
   {songName: "Amplifier", filePath: "Songs/1.mp3", coverPath: "Assets/download (1).jpeg" },
-  {songName: "Yarri Hai", filePath: "Songs/11.mp3", coverPath: "Assets/download (10).jpeg" },
-  {songName: "Meri Zinhadi Hai Tu", filePath: "Songs/12.mp3", coverPath: "Assets/download.jpeg30.jpeg" },
-  {songName: "Goa Wale Beach Pe", filePath: "Songs/13.mp3", coverPath: "Assets/download.jpeg40.jpeg" },
+  {songName: "Yarri Hai", filePath: "Songs/8.mp3", coverPath: "Assets/download (10).jpeg" },
+  {songName: "Meri Zinhadi Hai Tu", filePath: "Songs/9.mp3", coverPath: "Assets/download.jpeg30.jpeg" },
+  {songName: "Goa Wale Beach Pe", filePath: "Songs/10.mp3", coverPath: "Assets/download.jpeg40.jpeg" },
   {songName: "Number Likh", filePath: "Songs/5.mp3", coverPath: "Assets/download (11).jpeg" },
-  {songName: "Tora", filePath: "Songs/14.mp3", coverPath: "Assets/download.jpeg50.jpeg" },
+  {songName: "Tora", filePath: "Songs/11.mp3", coverPath: "Assets/download.jpeg50.jpeg" },
 ]
 
 songItem.forEach((element, i)=> { 
@@ -68,8 +69,10 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=> 
     e.target.classList.remove('fa-play-circle');
     e.target.classList.add('fa-pause-circle');
     audioElement.src = `Songs/${index}.mp3`;
+    masterSongName.innerText = songs[index].songName;
     audioElement.currentTime = 0;
     audioElement.play();
+    gif.style.opacity = 1;
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
   })
@@ -84,6 +87,7 @@ document.getElementById('next').addEventListener('click', ()=> {
     index += 1;
   }
   audioElement.src = `Songs/${index}.mp3`;
+  masterSongName.innerText = songs[index].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
@@ -99,6 +103,7 @@ document.getElementById('previous').addEventListener('click', ()=> {
     index -= 1;
   }
   audioElement.src = `Songs/${index}.mp3`;
+  masterSongName.innerText = songs[index].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
