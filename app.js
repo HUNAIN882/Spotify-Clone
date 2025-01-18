@@ -10,7 +10,7 @@ let masterSongName = document.getElementById('masterSongName');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-  {songName: "System Pe System", filePath: "Songs/0.mp3", coverPath: "Assets/15.jpeg" },
+  {songName: "Maine Royaan", filePath: "Songs/1.mp3", coverPath: "Assets/Maine-Royaan-Tanveer-Evan.jpg" },
   {songName: "Coca Cola Tu", filePath: "Songs/2.mp3", coverPath: "Assets/WhatsApp Image 2024-11-19 at 5.23.14 AM.jpeg" },
   {songName: "Excussess", filePath: "Songs/3.mp3", coverPath: "Assets/download (3).jpeg" },
   {songName: "Tenu Lehenga", filePath: "Songs/4.mp3", coverPath: "Assets/download.jpeg2.jpeg" },
@@ -78,14 +78,14 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=> 
 
 
 document.getElementById('next').addEventListener('click', ()=> {
-  if(index>=9) {
-    index = 0
+  if(songIndex>=9) {
+    songIndex = 0;
   }
   else {
-    index += 1;
+    songIndex += 1;
   }
-  audioElement.src = `Songs/${index}.mp3`;
-  masterSongName.innerText = songs[index].songName;
+  audioElement.src = `Songs/${songIndex+1}.mp3`;
+  masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
@@ -94,14 +94,14 @@ document.getElementById('next').addEventListener('click', ()=> {
 
 
 document.getElementById('previous').addEventListener('click', ()=> {
-  if(index<=0) {
+  if(songIndex<=0) {
     index = 0
   }
   else {
-    index -= 1;
+    songIndex -= 1;
   }
-  audioElement.src = `Songs/${index}.mp3`;
-  masterSongName.innerText = songs[index].songName;
+  audioElement.src = `Songs/${songIndex}.mp3`;
+  masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
